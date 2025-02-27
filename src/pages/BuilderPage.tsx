@@ -294,6 +294,9 @@ export default function BuilderPage() {
   }, [files, webContainer]);
 
 
+  console.log("web container instance -------------------------------------" , webContainer);
+
+
 
   const [selectedFile, setSelectedFile] = useState<FileItem | null>(null);
   const [expandedFolders, setExpandedFolders] = useState<Set<string>>(new Set(['src']));
