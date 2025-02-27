@@ -12,6 +12,7 @@ export function useWebContainer() : WebContainer | undefined {
         const containerFunc = async() => {
 
             const webcontainerInstance = await WebContainer.boot();
+            console.log("web contianer instance : ----------------------" , webcontainerInstance)
             setWebContainer(webcontainerInstance); //set the instance of the web container
 
         }
