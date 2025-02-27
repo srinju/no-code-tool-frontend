@@ -27,6 +27,8 @@ export default function BuilderPage() {
 
   //state for storing the llm messages >
   const [llmMessages , setllmMessages] = useState<{role : "user" | "assistant" , content : string}[]>([]);
+
+  const [lastModifiedTime, setLastModifiedTime] = useState<number>(Date.now());
     
   useEffect(() => {
     const init = async() => {
@@ -85,7 +87,7 @@ export default function BuilderPage() {
         }
     }
     init();
-  },[]);
+  },[prompt]);
 
 
   const handleFollowUpPrompt = async() => {
@@ -462,7 +464,7 @@ export default function BuilderPage() {
                 </div>
               )
             ) : (
-              <PreviewFrame files={files} webContainer={webContainer} />
+              <PreviewFrame files={files} webContainer={webContainer} previewMode={previewMode} />
             )}
           </div>
         </div>
